@@ -40,6 +40,7 @@ import eu.stratosphere.pact.common.type.base.PactString;
 public class WordCount implements PlanAssembler, PlanAssemblerDescription {
 
 	/**
+	 * 
 	 * Converts a input string (a line) into a KeyValuePair with the string
 	 * being the key and the value being a zero Integer.
 	 */

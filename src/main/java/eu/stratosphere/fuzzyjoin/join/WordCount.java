@@ -1,15 +1,19 @@
 
 package eu.stratosphere.fuzzyjoin.join;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
 import eu.stratosphere.fuzzyjoin.helpclasses.Config;
-import eu.stratosphere.fuzzyjoin.join.OnlineAggregationJoin.OnlineAggregationMapper;
-import eu.stratosphere.fuzzyjoin.join.OnlineAggregationJoin.OnlineAggregationReducer;
-import eu.stratosphere.fuzzyjoin.similarity.Similarity.SimilarityMatcher;
-import eu.stratosphere.fuzzyjoin.similarity.Similarity.SimilarityMatcher.SimilarityRuzicka;
-import eu.stratosphere.fuzzyjoin.similarity.Similarity.SimilarityOutFormat;
+import eu.stratosphere.fuzzyjoin.helpclasses.LineInFormat;
+import eu.stratosphere.fuzzyjoin.helpclasses.SimilarityOutFormat;
+import eu.stratosphere.fuzzyjoin.helpclasses.WordAndSumKey;
+import eu.stratosphere.fuzzyjoin.similarity.SimilarityMatcher;
+import eu.stratosphere.fuzzyjoin.similarity.SimilarityRuzicka;
 import eu.stratosphere.pact.common.contract.CoGroupContract;
 import eu.stratosphere.pact.common.contract.FileDataSinkContract;
 import eu.stratosphere.pact.common.contract.FileDataSourceContract;
@@ -18,15 +22,12 @@ import eu.stratosphere.pact.common.contract.MatchContract;
 import eu.stratosphere.pact.common.contract.OutputContract.SameKey;
 import eu.stratosphere.pact.common.contract.ReduceContract;
 import eu.stratosphere.pact.common.contract.ReduceContract.Combinable;
-import eu.stratosphere.pact.common.io.TextInputFormat;
-import eu.stratosphere.pact.common.io.TextOutputFormat;
 import eu.stratosphere.pact.common.plan.Plan;
 import eu.stratosphere.pact.common.plan.PlanAssembler;
 import eu.stratosphere.pact.common.plan.PlanAssemblerDescription;
 import eu.stratosphere.pact.common.stub.Collector;
 import eu.stratosphere.pact.common.stub.MapStub;
 import eu.stratosphere.pact.common.stub.ReduceStub;
-import eu.stratosphere.pact.common.type.KeyValuePair;
 import eu.stratosphere.pact.common.type.base.PactDouble;
 import eu.stratosphere.pact.common.type.base.PactInteger;
 import eu.stratosphere.pact.common.type.base.PactNull;
@@ -39,43 +40,7 @@ import eu.stratosphere.pact.common.type.base.PactString;
  */
 public class WordCount implements PlanAssembler, PlanAssemblerDescription {
 
-	/**
-	 * 
-	 * Converts a input string (a line) into a KeyValuePair with the string
-	 * being the key and the value being a zero Integer.
-	 */
-	public static class LineInFormat extends TextInputFormat<PactNull, PactString> {
 
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public boolean readLine(KeyValuePair<PactNull, PactString> pair, byte[] line) {
-			pair.setKey(new PactNull());
-			pair.setValue(new PactString(new String(line)));
-			return true;
-		}
-
-	}
-
-	/**
-	 * Writes a (String,Integer)-KeyValuePair to a string. The output format is:
-	 * "&lt;key&gt;&nbsp;&lt;value&gt;\nl"
-	 */
-	public static class WordCountOutFormat extends TextOutputFormat<PactString, PactInteger> {
-
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public byte[] writeLine(KeyValuePair<PactString, PactInteger> pair) {
-			String key = pair.getKey().toString();
-			String value = pair.getValue().toString();
-			String line = key + " " + value + "\n";
-			return line.getBytes();
-		}
-
-	}
 
 	/**
 	 * Converts a (String,Integer)-KeyValuePair into multiple KeyValuePairs. The
@@ -96,18 +61,18 @@ public class WordCount implements PlanAssembler, PlanAssemblerDescription {
 
 //			line = line.replaceAll("\\W", " ");			
 			
-//			if(line.contains("-")){
-//			line = line.replaceAll("-", " ");
-//			}
-//			if(line.contains(".")){
-//			line = line.replaceAll(".", " ");
-//			}
-//			if(line.contains(",")){
-//			line = line.replaceAll(",", " ");
-//			}
-//			if(line.contains(":")){
-//			line = line.replaceAll(":", " ");
-//			}
+			if(line.contains("-")){
+			line = line.replace("-", " ");
+			}
+			if(line.contains(".")){
+			line = line.replace(".", " ");
+			}
+			if(line.contains(",")){
+			line = line.replace(",", " ");
+			}
+			if(line.contains(":")){
+			line = line.replace(":", " ");
+			}
 //			String [] lineArray =  line.split(":");
 //			String id = lineArray[0];
 //			String title = lineArray[1];
@@ -273,4 +238,40 @@ public class WordCount implements PlanAssembler, PlanAssemblerDescription {
 		return Config.STRATOSPHERE_DESCRIPTION;
 	}
 
+	
+//	public static void main(String[] args){
+//		BufferedReader reader = null;
+//		try {
+//			reader = new BufferedReader(new FileReader("./src/main/resources/dblpraw.txt"));
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		String line;
+//		try {
+//			while((line = reader.readLine()) != null){
+//			
+////				line = line.replaceAll("\\W", " ");			
+//
+//				if(line.contains("-")){
+//				line = line.replace("-", " ");
+//				}
+//				if(line.contains(".")){
+//				line = line.replace(".", " ");
+//				}
+//				if(line.contains(",")){
+//				line = line.replace(",", " ");
+//				}
+//				if(line.contains(":")){
+//				line = line.replace(":", " ");
+//				}
+//				
+//				System.out.println(line);
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	
 }

@@ -9,21 +9,47 @@
   <version>0.1.2</version>
   <name>fuzzyjoin</name>
   
+    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <mahout.version>0.6</mahout.version>
+    <stratosphere.version>0.1.2</stratosphere.version>
+  </properties>
+  
+ 
   <packaging>jar</packaging>
-
-  <dependencies>
+<repositories>
+    <repository>
+      <id>stratosphere.eu</id>
+      <url>http://www.stratosphere.eu/maven2/</url>
+    </repository>
+  </repositories>
+   <dependencies> 
+      
+  <dependency>
+      <groupId>eu.stratosphere</groupId>
+      <artifactId>pact-clients</artifactId>
+      <version>${stratosphere.version}</version>
+    </dependency>
 
     <dependency>
     	<groupId>eu.stratosphere</groupId>
     	<artifactId>pact-common</artifactId>
-    	<version>${version}</version>
+    	<version>${stratosphere.version}</version>
     </dependency>
-    
+     
     <dependency>
     	<groupId>eu.stratosphere</groupId>
     	<artifactId>pact-runtime</artifactId>
-    	<version>${version}</version>
+    	<version>${stratosphere.version}</version>
     	<scope>test</scope>
+    </dependency>
+    
+       <dependency>
+    	<groupId>eu.stratosphere</groupId>
+    	<artifactId>pact-tests</artifactId>
+    	<version>${stratosphere.version}</version>
+    	<scope>test</scope>
+    	
     </dependency>
     
      <dependency>
@@ -47,13 +73,14 @@
       <artifactId>log4j</artifactId>
       <version>1.2.14</version>
     </dependency>
+    <!--  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+    -->
     
   </dependencies>
 
@@ -62,15 +89,41 @@
     </plugins>
   </reporting>
 
-  <build>
+ <build>
     <plugins>
-      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        
+        <version>2.4</version>
+		<executions>
+		<execution>
+			<id>WordCount</id>
+			<phase>package</phase>
+			<goals>
+				<goal>jar</goal>
+			</goals>
+			<configuration>
+				<classifier>WordCount</classifier>
+
+				<archive>
+					<manifestEntries>
+						<Pact-Assembler-Class>eu.stratosphere.fuzzyjoin.join.WordCount</Pact-Assembler-Class>
+					</manifestEntries>
+				</archive>
+		<!--  
+				<includes>
+					<include>**/wordcount/WordCount.class</include>
+					<include>**/wordcount/WordCount$*.class</include>
+				</includes>
+				-->
+			</configuration>
+		</execution>
+
+        </executions>
       </plugin>
-      
     </plugins>
   </build>
+  
+
+  
 </project>

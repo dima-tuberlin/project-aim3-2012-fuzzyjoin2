@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="src" path="/pact-clients"/>
+  <classpathentry kind="src" path="/pact-common"/>
+  <classpathentry kind="src" path="/nephele-common"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+  <classpathentry kind="src" path="/nephele-hdfs"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/hadoop/hadoop-core/0.20.204.0/hadoop-core-0.20.204.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-cli/commons-cli/1.2/commons-cli-1.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.7/junit-4.7.jar" sourcepath="M2_REPO/junit/junit/4.7/junit-4.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.4/commons-codec-1.4.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.7.1/jackson-core-asl-1.7.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.7.1/jackson-mapper-asl-1.7.1.jar"/>
+  <classpathentry kind="src" path="/pact-compiler"/>
+  <classpathentry kind="src" path="/pact-runtime"/>
+  <classpathentry kind="src" path="/nephele-server"/>
+  <classpathentry kind="src" path="/nephele-management"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-server/8.0.0.M1/jetty-server-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/servlet-api/3.0.20100224/servlet-api-3.0.20100224.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-continuation/8.0.0.M1/jetty-continuation-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-http/8.0.0.M1/jetty-http-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-io/8.0.0.M1/jetty-io-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-util/8.0.0.M1/jetty-util-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-security/8.0.0.M1/jetty-security-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-servlet/8.0.0.M1/jetty-servlet-8.0.0.M1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.8.5/mockito-all-1.8.5.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-module-junit4/1.4.9/powermock-module-junit4-1.4.9.jar" sourcepath="M2_REPO/org/powermock/powermock-module-junit4/1.4.9/powermock-module-junit4-1.4.9-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-module-junit4-common/1.4.9/powermock-module-junit4-common-1.4.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-core/1.4.9/powermock-core-1.4.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-reflect/1.4.9/powermock-reflect-1.4.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/objenesis/objenesis/1.2/objenesis-1.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.14.0-GA/javassist-3.14.0-GA.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-api-mockito/1.4.9/powermock-api-mockito-1.4.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/powermock/powermock-api-support/1.4.9/powermock-api-support-1.4.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-all/1.1/hamcrest-all-1.1.jar"/>
+  <classpathentry kind="src" path="/pact-tests"/>
+  <classpathentry kind="src" path="/pact-examples"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/r09/guava-r09.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-core/0.7/mahout-core-0.7.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/mahout-math/0.7/mahout-math-0.7.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-math/2.2/commons-math-2.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/uncommons/maths/uncommons-maths/1.2.2/uncommons-maths-1.2.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/jfree/jcommon/1.0.12/jcommon-1.0.12.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-core/3.6.0/lucene-core-3.6.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-analyzers/3.6.0/lucene-analyzers-3.6.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/mahout/commons/commons-cli/2.0-mahout/commons-cli-2.0-mahout.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-digester/commons-digester/1.8/commons-digester-1.8.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar"/>
+</classpath>

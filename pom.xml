@@ -97,17 +97,17 @@
         <version>2.4</version>
 		<executions>
 		<execution>
-			<id>WordCount</id>
+			<id>SmartFuzzyPlan</id>
 			<phase>package</phase>
 			<goals>
 				<goal>jar</goal>
 			</goals>
 			<configuration>
-				<classifier>WordCount</classifier>
+				<classifier>SmartFuzzyPlan</classifier>
 
 				<archive>
 					<manifestEntries>
-						<Pact-Assembler-Class>eu.stratosphere.fuzzyjoin.join.WordCount</Pact-Assembler-Class>
+						<Pact-Assembler-Class>eu.stratosphere.fuzzyjoin.plan.SmartFuzzyPlan</Pact-Assembler-Class>
 					</manifestEntries>
 				</archive>
 		<!--  

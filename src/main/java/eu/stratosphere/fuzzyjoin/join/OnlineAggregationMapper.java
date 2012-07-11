@@ -1,6 +1,6 @@
 package eu.stratosphere.fuzzyjoin.join;
 
-import eu.stratosphere.fuzzyjoin.helpclasses.WordAndSumKey;
+import eu.stratosphere.fuzzyjoin.util.WordAndSumKey;
 import eu.stratosphere.pact.common.stub.Collector;
 import eu.stratosphere.pact.common.stub.MapStub;
 import eu.stratosphere.pact.common.type.base.PactInteger;

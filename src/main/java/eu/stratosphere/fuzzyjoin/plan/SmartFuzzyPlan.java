@@ -1,4 +1,3 @@
-
 package eu.stratosphere.fuzzyjoin.plan;
 
 import eu.stratosphere.fuzzyjoin.join.OnlineAggregationCoGrouper;
